@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b); /* dark navy to charcoal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.quiz-card {
+  position: relative;
+  background: rgba(15, 23, 42, 0.6); /* deep dark glass */
+  padding: 30px;
+  border-radius: 20px;
+  color: #e2e8f0;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* 🟢 Cyan Glowing Shadow */
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  animation: glowCyan 2.5s ease-in-out infinite;
+}
+
+@keyframes glowCyan {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+#question {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.05);
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+}
+
+ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  color: #cbd5e1;
+}
+
+button {
+  background: linear-gradient(135deg, #00c9ff, #92fe9d); /* blue to aqua */
+  border: none;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.timer-bar {
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  margin: 20px 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#timer-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #00f5c4, #00c6ff); /* neon green to blue */
+  transition: width 1s linear;
+}
+
+.hide {
+  display: none;
+}

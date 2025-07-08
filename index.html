@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cool Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="quiz-card" id="quiz-box">
+      <h1 class="title">🧠 Quick Quiz</h1>
+      <div class="question-box">
+        <h2 id="question">Loading...</h2>
+        <ul id="options"></ul>
+      </div>
+      <div class="timer-bar">
+        <div id="timer-fill"></div>
+      </div>
+      <div class="controls">
+        <span id="timer">Time: 15s</span>
+        <button id="next-btn">Next</button>
+      </div>
+    </div>
+
+    <div class="quiz-card hide" id="result-box">
+      <h2>🎉 Quiz Completed!</h2>
+      <p id="score">Your Score: 0</p>
+      <button onclick="startQuiz()">🔁 Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
