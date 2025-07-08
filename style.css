@@ -7,21 +7,23 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #1e293b); /* dark navy to charcoal */
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 500px;
   position: relative;
 }
 
+/* Quiz Card with glowing shadow */
 .quiz-card {
   position: relative;
-  background: rgba(15, 23, 42, 0.6); /* deep dark glass */
+  background: rgba(15, 23, 42, 0.6);
   padding: 30px;
   border-radius: 20px;
   color: #e2e8f0;
@@ -30,12 +32,11 @@ body {
   overflow: hidden;
   z-index: 1;
   border: 1px solid rgba(255, 255, 255, 0.1);
-
-  /* 🟢 Cyan Glowing Shadow */
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-  animation: glowCyan 2.5s ease-in-out infinite;
+  animation: glowCyan 2.5s ease-in-out infinite, fadeInUp 0.8s ease forwards;
 }
 
+/* Glowing border animation */
 @keyframes glowCyan {
   0% {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
@@ -48,22 +49,40 @@ body {
   }
 }
 
+/* Fade-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title */
 .title {
   font-size: 2rem;
   margin-bottom: 15px;
   font-weight: 600;
   color: #ffffff;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
+/* Question */
 #question {
   font-size: 1.25rem;
   margin-bottom: 20px;
+  animation: fadeInUp 1s ease forwards;
 }
 
+/* Option List */
 ul {
   list-style: none;
 }
 
+/* Option Items */
 ul li {
   background: rgba(255, 255, 255, 0.05);
   margin: 10px 0;
@@ -73,12 +92,17 @@ ul li {
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.05);
   color: #f8fafc;
+  animation: fadeInUp 1.1s ease forwards;
 }
 
+/* 🌟 Glowing hover effect */
 ul li:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  transform: scale(1.03);
 }
 
+/* Controls (timer + button) */
 .controls {
   display: flex;
   justify-content: space-between;
@@ -87,36 +111,68 @@ ul li:hover {
   color: #cbd5e1;
 }
 
+/* Button */
 button {
-  background: linear-gradient(135deg, #00c9ff, #92fe9d); /* blue to aqua */
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
   border: none;
   padding: 10px 20px;
   color: black;
   font-weight: 600;
   border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  animation: fadeInUp 1.2s ease forwards;
 }
 
 button:hover {
   opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  transform: scale(1.05);
 }
 
+/* Timer bar background */
 .timer-bar {
   height: 10px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   margin: 20px 0;
   border-radius: 6px;
   overflow: hidden;
 }
 
+/* Timer fill with animated gradient */
 #timer-fill {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #00f5c4, #00c6ff); /* neon green to blue */
+  background: linear-gradient(to right, #00f5c4, #00c6ff);
   transition: width 1s linear;
 }
 
+/* Hide utility */
 .hide {
   display: none;
+}
+
+/* 🔁 Responsive Design */
+@media (max-width: 600px) {
+  .quiz-card {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  #question {
+    font-size: 1.1rem;
+  }
+
+  ul li {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
 }
